@@ -8,7 +8,7 @@
   <div class="jumbotron text-center">
     <h3>Add a new animal</h3>
   </div>
-  @using (Html.BeginFrom())
+  @using (Html.BeginForm())
   {
     @Html.LabelFor(model => model.Type)
     @Html.TextBoxFor(model => model.Type)
