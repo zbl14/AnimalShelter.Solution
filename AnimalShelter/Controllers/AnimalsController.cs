@@ -20,5 +20,18 @@ namespace AnimalShelter.Controllers
       return View(model);
     }
 
+    public ActionResult Create()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Animal animal)
+    {
+        _db.Animals.Add(animal);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+    }
+
   }
 }
