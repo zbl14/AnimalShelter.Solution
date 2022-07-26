@@ -3,6 +3,7 @@
 }
 
 @using AnimalShelter.Models;
+@model List<AnimalShelter.Models.Animal>;
 
 <div class="container">
   <div class="jumbotron text-center">
@@ -17,7 +18,7 @@
 
   @foreach (Animal animal in Model)
   {
-    <li>@Html.ActionLink($"{animal.Name}", "Details", new { id = animal.AnimalId })</li>
+    <li>@Html.ActionLink($"{animal.Name}", "Details", new { id = animal.AnimalId }), @animal.Type, @animal.Date</li>
   }
 
   <p>@Html.ActionLink("Add new animal", "Create")</p>
